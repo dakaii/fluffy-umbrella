@@ -1,19 +1,10 @@
 .PHONY: build up down
 
-create_migration:
-	goose -dir ./migrations create $(NAME)
-
 migrate:
-	docker-compose -f docker-compose.yml run --rm goose-dev bash -c "goose -dir ./migrations up"
+	atlas schema apply --env dev
 
 migrate-test-db:
-	docker-compose -f docker-compose.test.yml run --rm goose-test bash -c "goose -dir ./migrations up"
-
-create-dev-db:
-	docker exec -it fluffy-postgresql-dev1 psql -U postgres -c "CREATE DATABASE fluffy_development;"
-
-drop-dev-db:
-	docker exec -it fluffy-postgresql-dev1 psql -U postgres -c "DROP DATABASE fluffy_development;"
+	atlas schema apply --env test
 
 build:
 	env GOOS=linux GOARCH=386 go build -o build ./cmd/server/main.go
@@ -29,8 +20,7 @@ test:
 	docker-compose -f docker-compose.test.yml build
 	docker-compose -f docker-compose.test.yml up -d postgresql-test
 	- docker-compose -f docker-compose.test.yml exec postgresql-test bash -c "until pg_isready; do sleep 5; done"
-	- docker-compose -f docker-compose.test.yml exec postgresql-test bash -c "psql -U postgres -c 'CREATE DATABASE fluffy_development;'"
-	- docker-compose -f docker-compose.test.yml run --rm goose-test bash -c "goose -dir ./migrations up"
+	- atlas schema apply --env test --auto-approve
 	- docker-compose -f docker-compose.test.yml run --rm test
 	docker-compose -f docker-compose.test.yml rm -fsv
 

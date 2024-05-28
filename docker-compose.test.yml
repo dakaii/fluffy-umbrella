@@ -24,14 +24,11 @@ services:
     networks:
       - test-network
 
-  goose-test:
-    build:
-      context: .
-      dockerfile: Dockerfile.goose
+  atlas-test:
+    image: arigaio/atlas
+    command: [ "schema", "apply", "--env", "test" ]
     volumes:
-      - ./migrations:/app/migrations
-    env_file:
-      - config/test.conf
+      - ./atlas.hcl:/app/atlas.hcl
     networks:
       - test-network
     working_dir: /app
