@@ -1,8 +1,8 @@
 package user
 
 import (
-	"graphyy/domain"
-	"graphyy/repository/userrepo"
+	"fluffy/domain"
+	"fluffy/repository/userrepo"
 )
 
 // declaring the repository interface in the controller package allows us to easily swap out the actual implementation, enforcing loose coupling.

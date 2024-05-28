@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"graphyy/repository/userrepo"
+	"fluffy/repository/userrepo"
 
 	"gorm.io/gorm"
 )

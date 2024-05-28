@@ -2,9 +2,9 @@ package user
 
 import (
 	"errors"
-	"graphyy/domain"
+	"fluffy/domain"
 
-	"graphyy/internal/auth"
+	"fluffy/internal/auth"
 
 	"golang.org/x/crypto/bcrypt"
 )

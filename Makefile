@@ -10,10 +10,10 @@ migrate-test-db:
 	docker-compose -f docker-compose.test.yml run --rm goose-test bash -c "goose -dir ./migrations up"
 
 create-dev-db:
-	docker exec -it graphyy-postgresql-dev1 psql -U postgres -c "CREATE DATABASE graphyy_development;"
+	docker exec -it fluffy-postgresql-dev1 psql -U postgres -c "CREATE DATABASE fluffy_development;"
 
 drop-dev-db:
-	docker exec -it graphyy-postgresql-dev1 psql -U postgres -c "DROP DATABASE graphyy_development;"
+	docker exec -it fluffy-postgresql-dev1 psql -U postgres -c "DROP DATABASE fluffy_development;"
 
 build:
 	env GOOS=linux GOARCH=386 go build -o build ./cmd/server/main.go
@@ -29,13 +29,13 @@ test:
 	docker-compose -f docker-compose.test.yml build
 	docker-compose -f docker-compose.test.yml up -d postgresql-test
 	- docker-compose -f docker-compose.test.yml exec postgresql-test bash -c "until pg_isready; do sleep 5; done"
-	- docker-compose -f docker-compose.test.yml exec postgresql-test bash -c "psql -U postgres -c 'CREATE DATABASE graphyy_development;'"
+	- docker-compose -f docker-compose.test.yml exec postgresql-test bash -c "psql -U postgres -c 'CREATE DATABASE fluffy_development;'"
 	- docker-compose -f docker-compose.test.yml run --rm goose-test bash -c "goose -dir ./migrations up"
 	- docker-compose -f docker-compose.test.yml run --rm test
 	docker-compose -f docker-compose.test.yml rm -fsv
 
 clear-test:
-	docker volume remove graphyy_postgres_test_data
+	docker volume remove fluffy_postgres_test_data
 
 binary:
 	env GOOS=linux GOARCH=386 go build -o build ./cmd/server/main.go

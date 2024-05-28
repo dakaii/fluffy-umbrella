@@ -2,8 +2,8 @@ package user
 
 import (
 	"errors"
-	"graphyy/domain"
-	"graphyy/internal/auth"
+	"fluffy/domain"
+	"fluffy/internal/auth"
 )
 
 // Signup lets users sign up for this application and returns a jwt.

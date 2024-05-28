@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"graphyy/controller/user"
-	"graphyy/repository"
+	"fluffy/controller/user"
+	"fluffy/repository"
 )
 
 // Controllers contains all the controllers

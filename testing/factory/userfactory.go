@@ -3,8 +3,8 @@ package factory
 import (
 	"context"
 	"fmt"
-	"graphyy/domain"
-	"graphyy/repository/userrepo"
+	"fluffy/domain"
+	"fluffy/repository/userrepo"
 	"time"
 
 	"github.com/bluele/factory-go/factory"

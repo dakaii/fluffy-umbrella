@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"graphyy/controller"
-	"graphyy/database"
-	"graphyy/internal/envvar"
-	"graphyy/repository"
-	"graphyy/view"
+	"fluffy/controller"
+	"fluffy/database"
+	"fluffy/internal/envvar"
+	"fluffy/repository"
+	"fluffy/view"
 	"net/http"
 )
 

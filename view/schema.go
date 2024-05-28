@@ -1,8 +1,8 @@
 package view
 
 import (
-	"graphyy/controller"
-	"graphyy/domain"
+	"fluffy/controller"
+	"fluffy/domain"
 
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/graphql/gqlerrors"

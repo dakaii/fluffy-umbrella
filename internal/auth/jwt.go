@@ -3,8 +3,8 @@ package auth
 import (
 	"errors"
 	"fmt"
-	"graphyy/domain"
-	"graphyy/internal/envvar"
+	"fluffy/domain"
+	"fluffy/internal/envvar"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"

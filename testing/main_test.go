@@ -2,7 +2,7 @@ package testing
 
 import (
 	"fmt"
-	"graphyy/internal/envvar"
+	"fluffy/internal/envvar"
 	"log"
 
 	"gorm.io/driver/postgres"

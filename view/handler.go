@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 
-	"graphyy/controller"
-	"graphyy/internal/auth"
+	"fluffy/controller"
+	"fluffy/internal/auth"
 
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"

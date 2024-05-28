@@ -1,4 +1,4 @@
-module graphyy
+module fluffy
 
 go 1.22
 

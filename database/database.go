@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"graphyy/internal/envvar"
+	"fluffy/internal/envvar"
 
 	_ "github.com/lib/pq"
 	"gorm.io/driver/postgres"
